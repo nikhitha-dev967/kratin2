@@ -1,12 +1,11 @@
 import {useState} from "react"
 import "./index.css"
 
+
 const AllocationItem = (props) => {
-    const [timer, setTimer] = useState ()
+    // const [timer, setTimer] = useState ()
     const {each, allocating, deAllocating, id,allocatedUser, users} = props
-    console.log(allocatedUser)
-    const {userId, allocationId, resource, time} = each
-    console.log()
+    const {userId, allocationId, resource} = each
     const onClickAllocate = () => {
         allocating(allocationId)
     }
@@ -20,26 +19,13 @@ const AllocationItem = (props) => {
         user = firstName + " " + lastName
     }
 
-    const getTime = () => {
-        if (time !== null) {
-            const diffTime = new Date() - new Date(time)
-            const hours = diffTime/(1000*60*60)
-            const minutes = diffTime%(1000*60*60)/(1000*60)
-            const allocatedTime = `${parseInt(hours)} hours and ${parseInt(minutes)} minutes`
-            setInterval( () => {
-                setTimer(allocatedTime)
-            },5000)
-            console.log(timer)
-            return <p>{allocatedTime}</p>
-        }
-        return <p>{`0 hours and 0 minutes`}</p>
-    }
+    
 
     const getTheButton = () => {
         if (allocatedUser) {
             if (userId !== "" ) {
                 if (userId === id){
-                    return <button type="button" className="remove-allocation" onClick={onClickRemoveAllocate}>Remove Allocation</button>
+                    return <button type="button" className="remove-allocation" onClick={onClickRemoveAllocate}>DeAllocate</button>
                 }
                 return <button type="button" className="allocated" disabled >Allocated</button>
             }
@@ -59,7 +45,6 @@ const AllocationItem = (props) => {
             {userId !== "" ? <h5>Allocated </h5> : <h5>Not in use</h5>}
             {userId !== "" && <p className="name">{user}</p>}
             <div className="d-felx flex-column">
-                {getTime()}
                 {getTheButton()}
             </div>
         </li>
