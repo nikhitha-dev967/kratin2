@@ -1,0 +1,21 @@
+.home-container{
+    height: 92vh;
+    overflow: auto;
+    padding : 10px;
+}
+
+.dash-list-container{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 10px;
+}
+
+@media screen and (min-width : 767px) {
+    .dash-list-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}

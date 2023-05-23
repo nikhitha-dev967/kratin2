@@ -1,0 +1,83 @@
+.label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-bg-contaier{
+    background-image: linear-gradient(to right, #125782,#12827b,#12823f);
+    background-size: cover;
+    height: 100vh;
+    padding : 10px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding : 20px;
+    width: 90vw;
+    height: 90vh;
+}
+
+.user-form{
+    width: 90%;
+}
+
+.logo-image {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+}
+
+.sign-up-tag{
+    width: 90%;
+    margin-top : 10px;
+}
+
+.google-button{
+    width: 90%;
+}
+
+.login-form-input {
+    outline: none;
+    border : solid 2px;
+    height: 40px;
+    border-color: gray;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.sign-up {
+    cursor: pointer;
+}
+
+@media screen and (min-width : 576px) {
+    .form-container {
+        width: 70vw;
+    }
+    .logo-image {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+    }
+}
+
+@media screen and (min-width : 767px) {
+    .form-container {
+        width: 55vw;
+    }
+}
+
+@media screen and (min-width : 920px) {
+    .form-container {
+        width: 30vw;
+    }
+    .user-form{
+        width: 80%;
+    }
+    .sign-up-tag {
+        width : 80%;
+    }
+    .google-button{
+        width: 80%;
+    }
+}
