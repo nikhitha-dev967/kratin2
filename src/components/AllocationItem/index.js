@@ -1,6 +1,4 @@
-import {useState} from "react"
 import "./index.css"
-
 
 const AllocationItem = (props) => {
     // const [timer, setTimer] = useState ()
@@ -14,10 +12,13 @@ const AllocationItem = (props) => {
     }
     let user
     if (userId !== "") {
+        console.log("userIdalloc",userId)
         const getAllocatedUserDetails = users.filter(eachUser => eachUser.id === userId)
+        
         const {firstName,lastName} = getAllocatedUserDetails[0]
         user = firstName + " " + lastName
     }
+    
 
     
 
