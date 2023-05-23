@@ -33,10 +33,9 @@ const Home = (props) => {
     
     const myDetails = users.filter(eachUser => eachUser.id === id)
     const {firstName, lastName} = myDetails[0]
-    console.log(id)
     return (
         <div>
-            <Header allocations={allocations} setAllocations={setAllocations}/>
+            <Header allocations={allocations} userId={id} allocatedUser={allocatedUser} deAllocating={deAllocating}/>
             <div className="home-container">
                 <h1>Welcome, {" "}{firstName}{" "}{lastName}</h1>
                 <div>
